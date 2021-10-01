@@ -2,6 +2,7 @@
 
 import { Blocks } from './sorting.js';
 import {bubbleSort} from './bubble-sort.js';
+import { quickSort } from './quicksort.js';
 
 function sortHTML() {
     const defaultSliderNum = 20;
@@ -11,7 +12,6 @@ function sortHTML() {
             <form>
                 <select id="sorting-select">
                     <option value="bubble">Bubble Sort</option>
-                    <option value="merge">Merge Sort</option>
                     <option value="quick">QuickSort</option>
                 </select>
                 
@@ -25,7 +25,12 @@ function sortHTML() {
     const myBlocks = new Blocks();
     myBlocks.generateBlocks();
 
-    document.getElementById("sorting-submit").addEventListener("click", () => myBlocks.sort(bubbleSort));
+    document.getElementById("sorting-submit").addEventListener("click", () => {
+        const sortAlgos = {'bubble': bubbleSort, 'quick': quickSort};
+        const selectValue = document.getElementById("sorting-select").value;
+        myBlocks.sort(sortAlgos[selectValue]);
+    });
+
     document.getElementById("sorting-slider").addEventListener("change", () => {
         const slider = document.getElementById("sorting-slider");
         const sliderOutput = document.getElementById("slider-output");
