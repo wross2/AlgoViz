@@ -7,13 +7,15 @@ class Blocks {
     }
 
     generateBlocks(num = 20) {
-        this.container.innerHTML = '<div class="chart-title">Bubble Sort</div>';
+        const max = 100;
+        const min = 20;
+        this.container.innerHTML = '';
         if (num && typeof num !== "number") {
             alert("First argument must be a typeof Number");
             return;
         }
         for (let i = 0; i < num; i += 1) {
-            const value = Math.floor(Math.random() * 100);
+            const value = Math.floor(Math.random() * (max - min + 1) + min);
     
             const block = document.createElement("div");
             block.classList.add("block");
@@ -44,7 +46,18 @@ class Blocks {
             window.requestAnimationFrame(function() {
                 setTimeout(() => {
                     try{
-                        document.querySelector(".data-container").insertBefore(block2, block1);
+                        //document.querySelector(".data-container").insertBefore(block2, block1);
+                        let temp = document.createElement("div");
+                        block1.parentNode.insertBefore(temp, block1);
+
+                        // move obj1 to right before obj2
+                        block2.parentNode.insertBefore(block1, block2);
+
+                        // move obj2 to right before where obj1 used to be
+                        temp.parentNode.insertBefore(block2, temp);
+
+                        // remove temporary marker node
+                        temp.parentNode.removeChild(temp);
                         resolve();
                     }
                     catch (err){
