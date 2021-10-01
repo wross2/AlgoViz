@@ -46,17 +46,10 @@ class Blocks {
             window.requestAnimationFrame(function() {
                 setTimeout(() => {
                     try{
-                        //document.querySelector(".data-container").insertBefore(block2, block1);
                         let temp = document.createElement("div");
                         block1.parentNode.insertBefore(temp, block1);
-
-                        // move obj1 to right before obj2
                         block2.parentNode.insertBefore(block1, block2);
-
-                        // move obj2 to right before where obj1 used to be
                         temp.parentNode.insertBefore(block2, temp);
-
-                        // remove temporary marker node
                         temp.parentNode.removeChild(temp);
                         resolve();
                     }
