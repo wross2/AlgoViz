@@ -7,7 +7,7 @@ async function bubbleSort(delay = 100) {
     const finishedColor = "#2E765E";
 
     if (delay && typeof delay !== "number") {
-        alert("sort: First argument must be a typeof Number");
+        console.error("sort: First argument must be a typeof Number");
         return;
     }
     let blocks = document.querySelectorAll(".block");
