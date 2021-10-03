@@ -82,6 +82,7 @@ $RECYCLE.BIN/
 # Ignore VS Code Files
 ##################################################
 
+**/.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
