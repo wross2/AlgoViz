@@ -66,7 +66,7 @@ async function quickSort(delay=defaultDelay) {
             high = await partition(low, high, delay);
             arrStack.push(high);
             high-=1;
-        } else if ((high-low) == 1){
+        } else if ((high-low) === 1){
             const lowVal = Number(blocks[low].childNodes[0].innerHTML);
             const highVal = Number(blocks[high].childNodes[0].innerHTML);
             blocks[high].style.backgroundColor = selectedBlockColor;
@@ -82,17 +82,19 @@ async function quickSort(delay=defaultDelay) {
                 await sortBlocks.swap(blocks[high], blocks[low]);
             }
             blocks[high].style.backgroundColor = finishedColor;
-            blocks[low].style.backgroundColor = finishedColor;
             low = arrStack.pop()+1;
             high = arrStack[arrStack.length-1]-1;
-        } else {
-            //blocks[low].style.backgroundColor = finishedColor;
             if (low) {
                 const blockArr = Array.from(blocks);
-                blockArr.slice(0, low).forEach((block) => block.style.backgroundColor = finishedColor);
+                blockArr.slice(0, low-1).forEach((block) => block.style.backgroundColor = finishedColor);
             }
+        } else {
             low = arrStack.pop()+1;
             high = arrStack[arrStack.length-1]-1;
+            if (low) {
+                const blockArr = Array.from(blocks);
+                blockArr.slice(0, low-1).forEach((block) => block.style.backgroundColor = finishedColor);
+            }
         }
         await new Promise(resolve =>
             setTimeout(() => {
