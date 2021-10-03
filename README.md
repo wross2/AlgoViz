@@ -1,3 +1,15 @@
+# About
+
+This is a personal project built to visualize some popular computer science algorithms. The site is completely static and is built using vanilla HTML, CSS, and JS. Site is hosted on Netlify and should be live [here](https://algov1z.netlify.app)
+
+
+# Function
+
+In it's current iteration, the site supports two popular sorting algorithms: [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) and [Quick Sort](https://en.wikipedia.org/wiki/Quicksort).
+
+
+# Acknowledgements
+
 Credit for code inspiration: https://www.gosink.in/bubble-sort-css-javascript-animation/
 
 
