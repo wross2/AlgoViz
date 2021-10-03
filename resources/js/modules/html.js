@@ -28,6 +28,10 @@ function sortHTML() {
     document.getElementById("sorting-submit").addEventListener("click", () => {
         const sortAlgos = {'bubble': bubbleSort, 'quick': quickSort};
         const selectValue = document.getElementById("sorting-select").value;
+        const chartTitle = document.getElementById("chart-title");
+        let titleString = selectValue[0].toUpperCase() + 
+                          selectValue.slice(1, selectValue.length) + " Sort";
+        chartTitle.innerHTML = titleString;
         myBlocks.sort(sortAlgos[selectValue]);
     });
 

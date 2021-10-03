@@ -9,7 +9,7 @@ class Blocks {
     generateBlocks(num = 20) {
         const max = 100;
         const min = 20;
-        this.container.innerHTML = '';
+        this.container.innerHTML = '<div id="chart-title"></div >';
         if (num && typeof num !== "number") {
             alert("First argument must be a typeof Number");
             return;
