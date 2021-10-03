@@ -16,7 +16,7 @@ The site is currently not optimized for a mobile experience. In other words, it 
 Credit for code inspiration: https://www.gosink.in/bubble-sort-css-javascript-animation/
 
 
-Color schemes inspired from [Canva Color Palettes](https://www.canva.com/colors/color-palette-generator/):
+Color schemes from [Canva Color Palettes](https://www.canva.com/colors/color-palette-generator/):
 - [Water Foam](https://www.canva.com/colors/color-palettes/water-foam/)
 - [Smiling Roses](https://www.canva.com/colors/color-palettes/smiling-roses/)
 

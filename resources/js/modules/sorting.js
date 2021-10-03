@@ -10,21 +10,34 @@ class Blocks {
         const max = 100;
         const min = 20;
         this.container.innerHTML = '<div id="chart-title"></div >';
+        let chartWidth = window.getComputedStyle(this.container).width;
+        let margin = 10;
+        chartWidth = Number(chartWidth.slice(0, chartWidth.length-2)) - margin*2;
+        
         if (num && typeof num !== "number") {
-            alert("First argument must be a typeof Number");
+            console.error("First argument must be a typeof Number");
             return;
         }
+        if (chartWidth && typeof chartWidth !== "number"){
+            console.error("chartWidth must be specified in px in CSS and converted to number in JS.");
+        }
+        
+        //Size values are in px
+        const blockGap = 2;
+        let blockWidth = Math.floor(chartWidth / num - blockGap);
+
         for (let i = 0; i < num; i += 1) {
-            const value = Math.floor(Math.random() * (max - min + 1) + min);
-    
+            const blockValue = Math.floor(Math.random() * (max - min + 1) + min);    
             const block = document.createElement("div");
             block.classList.add("block");
-            block.style.height = `${value * 3}px`;
-            block.style.transform = `translateX(${i * 30}px)`;
+            block.style.height = `${blockValue * 3}px`;
+            block.style.width = `${blockWidth}px`;
+            block.style.transform = `translateX(${i * (blockWidth + blockGap)}px)`;
     
             const blockLabel = document.createElement("label");
             blockLabel.classList.add("block__id");
-            blockLabel.innerHTML = value;
+            blockLabel.innerHTML = blockValue;
+            blockLabel.style.fontSize = `${(60-num)/2}px`;
     
             block.appendChild(blockLabel);
             this.container.appendChild(block);
@@ -57,7 +70,7 @@ class Blocks {
                         const message = "Slider was changed by user before " +
                                         "sorting was completed. Sorting halted. " +
                                         "Everything should be working as expected."
-                        console.log(err + "\n\n" + message);
+                        console.log(err + " -> " + message);
                     }
                 }, 250);
             });
