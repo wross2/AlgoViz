@@ -5,7 +5,7 @@ var baseColor = "#29A0B1";
 var selectedBlockColor = "#E2808A";
 var finishedColor = "#2E765E";
 var pivotColor = '#C55FFC';
-var defaultDelay = 100;
+var defaultDelay = 200;
 
 async function partition(low, high, delay=defaultDelay){
     let blocks = document.querySelectorAll(".block");
@@ -26,8 +26,8 @@ async function partition(low, high, delay=defaultDelay){
         const jValue = Number(blocks[j].childNodes[0].innerHTML);
         if (jValue <= pivot){
             i += 1;
+            if(i !== j) await sortBlocks.swap(blocks[i], blocks[j]);
             
-            await sortBlocks.swap(blocks[i], blocks[j]);
             blocks = document.querySelectorAll(".block");
             blocks[i].style.backgroundColor = baseColor;
         }
