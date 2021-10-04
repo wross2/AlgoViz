@@ -41,6 +41,11 @@ function sortHTML() {
         myBlocks.generateBlocks(Number(slider.value));
         sliderOutput.innerHTML = slider.value;
     });
+
+    window.addEventListener('resize', () => {
+        const slider = document.getElementById("sorting-slider");
+        myBlocks.generateBlocks(Number(slider.value));
+    });
 }
 
 

@@ -9,7 +9,9 @@ In it's current iteration, the site supports two popular sorting algorithms: [Bu
 
 # Weaknesses
 
-The site is currently not optimized for a mobile experience. In other words, it does not look quite as intended when on smaller screens because I have not added the necessary responsiveness to the site. So, please view on a larger screen for a better experience.
+~~The site is currently not optimized for a mobile experience. In other words, it does not look quite as intended when on smaller screens because I have not added the necessary responsiveness to the site. So, please view on a larger screen for a better experience.~~
+
+While not a "perfect" experience, the site works much better on mobile now.
 
 # Acknowledgements
 

@@ -23,7 +23,10 @@ class Blocks {
         }
         
         //Size values are in px
-        const blockGap = 2;
+        let blockGap = 2;
+        if (num > 35){
+            blockGap = 1;
+        }
         let blockWidth = Math.floor(chartWidth / num - blockGap);
 
         for (let i = 0; i < num; i += 1) {
@@ -37,8 +40,14 @@ class Blocks {
             const blockLabel = document.createElement("label");
             blockLabel.classList.add("block__id");
             blockLabel.innerHTML = blockValue;
-            blockLabel.style.fontSize = `${(60-num)/2}px`;
-    
+            
+            let labelFontSize = (60-num)/2;
+            if(labelFontSize > blockWidth){
+                blockLabel.style.fontSize = `${blockWidth}px`;
+            } else {
+                blockLabel.style.fontSize = `${labelFontSize}px`;
+            }
+
             block.appendChild(blockLabel);
             this.container.appendChild(block);
         }
@@ -67,8 +76,9 @@ class Blocks {
                         resolve();
                     }
                     catch (err){
-                        const message = "Slider was changed by user before " +
-                                        "sorting was completed. Sorting halted. " +
+                        const message = "Slider was changed by user before sorting " +
+                                        "was completed OR user resized window. " + 
+                                        "Sorting halted, chart re-generated." +
                                         "Everything should be working as expected."
                         console.log(err + " -> " + message);
                     }
