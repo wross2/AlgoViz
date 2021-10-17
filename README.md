@@ -5,13 +5,13 @@ This is a personal project built to visualize some popular computer science algo
 
 # Function
 
-In it's current iteration, the site supports two popular sorting algorithms: [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) and [Quicksort](https://en.wikipedia.org/wiki/Quicksort). The site also features a slider for the user to dynamically control the number of values to be sorted (10 minimum, 50 maximum.)
+In it's current iteration, the site supports animations for two popular sorting algorithms: [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) and [Quicksort](https://en.wikipedia.org/wiki/Quicksort). The site also features a slider for the user to dynamically control the number of values to be sorted (10 minimum, 50 maximum.)
 
 # Weaknesses
 
 ~~The site is currently not optimized for a mobile experience. In other words, it does not look quite as intended when on smaller screens because I have not added the necessary responsiveness to the site. So, please view on a larger screen for a better experience.~~
 
-While not a "perfect" experience, the site works much better on mobile now.
+While not a "perfect" experience, the site works much better on mobile now. Weaknesses section still included for historical documentation.
 
 # Acknowledgements
 
